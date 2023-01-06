@@ -4,6 +4,17 @@
   "main": "index.js",
   "author": "João Marcos Gonçalves <joaomgoncalvesbr@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged":{
+    "*.ts":[
+        "eslint 'src/**' --fix",
+        "git add"
+    ]
+},
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.4.0",
     "@commitlint/config-conventional": "^17.4.0",
@@ -15,6 +26,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "typescript": "^4.9.4"
   }
