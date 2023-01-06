@@ -1,0 +1,7 @@
+{
+  "name": "fullstack-challenge-2022-dictionary-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "João Marcos Gonçalves <joaomgoncalvesbr@gmail.com>",
+  "license": "MIT"
+}
