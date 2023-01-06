@@ -8,6 +8,10 @@ Backend(current) - [Fullstack Challenge 🏅 2022 - Dictionary - Backend](https:
 
 Frontend - [Fullstack Challenge 🏅 2022 - Dictionary - Frontend](https://github.com/JonneBR/fullstack-challenge-2022-dictionary-frontend)
 
+## API Overview
+
+> ## Architecture
+
 > ## Project Objectives
 
 * Como usuário, devo ser capaz de realizar login com usuário e senha
