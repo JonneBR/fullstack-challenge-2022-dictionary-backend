@@ -8,12 +8,6 @@
     "lint": "lint-staged",
     "prepare": "husky install"
   },
-  "lint-staged":{
-    "*.ts":[
-        "eslint 'src/**' --fix",
-        "git add"
-    ]
-},
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.4.0",
