@@ -5,7 +5,6 @@
   "author": "João Marcos Gonçalves <joaomgoncalvesbr@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "lint-staged",
     "prepare": "husky install",
     "test": "jest"
   },
