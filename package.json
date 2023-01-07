@@ -11,13 +11,14 @@
     "test:staged": "yarn test --findRelatedTests"
   },
   "husky": {
-    "hooks":{
+    "hooks": {
       "pre-commit":"lint-staged"
     }
   },
   "lint-staged": {
    "src/**/*.ts": [
-    "yarn lint"
+    "yarn lint",
+    "yarn test"
    ]
   },
   "dependencies": {},
