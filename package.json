@@ -7,7 +7,9 @@
   "scripts": {
     "lint": "eslint src --ext ts --max-warnings=0",
     "prepare": "husky install",
-    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test": "jest --passWithNoTests --runInBand --no-cache --silent --noStackTrace",
+    "test:verbose": "jest --passWithNoTests --runInBand --no-cache",
+    "test:unit": "yarn jest --watch",
     "test:staged": "yarn test --findRelatedTests"
   },
   "lint-staged": {
