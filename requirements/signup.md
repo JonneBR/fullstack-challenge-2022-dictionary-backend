@@ -7,6 +7,8 @@
 
 * Part One
 ![alt architecture](/public/img/signup/architecture-part-one.PNG)
+* Part Two
+![alt architecture](/public/img/signup/architecture-part-two.PNG)
 > ## Success Case
 
 1. 🔲 Receives a **POST** request at **/auth/signup** route
