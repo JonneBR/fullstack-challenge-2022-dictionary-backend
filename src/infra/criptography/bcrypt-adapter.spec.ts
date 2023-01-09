@@ -34,3 +34,10 @@ test('Should return a hash on success', async () => {
   const hash = await sut.encrypt('hashed_value')
   expect(hash).toBe('hashed_value')
 })
+
+test('Should throw if Bcrypt throws', async () => {
+  const { sut } = makeSut()
+  jest.spyOn(bcrypt, 'hash').mockImplementationOnce(() => { throw new Error() })
+  const promise = sut.encrypt('hashed_value')
+  await expect(promise).rejects.toThrow()
+})
