@@ -5,7 +5,8 @@
 > ## Architecture
 * The following images show how the architecture has evolved
 
-[![alt architecture](/public/img/signup/architecture-part-one.PNG)]
+* Part One
+![alt architecture](/public/img/signup/architecture-part-one.PNG)
 > ## Success Case
 
 1. 🔲 Receives a **POST** request at **/auth/signup** route
