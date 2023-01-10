@@ -3,15 +3,18 @@
 🔲✅❎
 
 > ## Architecture
-* The following images show how the architecture has evolved
 
-* Domain and Presentation Layer
-![alt architecture](/public/img/signup/architecture-domain-presentation-layer.PNG)
-* Utils Layer
-![alt architecture](/public/img/signup/architecture-utils-layer.PNG)
-* Data Layer
-![alt architecture](/public/img/signup/architecture-data-layer.PNG)
-> ## Success Case
+- The following images show how the architecture has evolved
+
+- Domain and Presentation Layer
+  ![alt architecture](/public/img/signup/architecture-domain-presentation-layer.PNG)
+- Utils Layer
+  ![alt architecture](/public/img/signup/architecture-utils-layer.PNG)
+- Data Layer
+  ![alt architecture](/public/img/signup/architecture-data-layer.PNG)
+- Infra Layer
+  ![alt architecture](/public/img/signup/architecture-infra-layer.PNG)
+  > ## Success Case
 
 1. 🔲 Receives a **POST** request at **/auth/signup** route
 2. ✅ Validate required data as **name**, **email**, **password** and **passwordConfirmation**
