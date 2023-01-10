@@ -3,12 +3,12 @@ import app from '@/main/config/app'
 
 test('Should return an account on success', async () => {
   await request(app)
-    .post('/signup')
+    .post('/api/auth/signup')
     .send({
       name: 'Yochanan',
       email: 'yochanan@email.com',
       password: 'yochanan123',
       passwordConfirmation: 'yochanan123'
     })
-    .expect(404)
+    .expect(200)
 })
