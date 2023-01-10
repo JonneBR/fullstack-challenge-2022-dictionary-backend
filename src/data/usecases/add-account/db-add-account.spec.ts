@@ -1,6 +1,5 @@
 import { AddAccountRepository, Encrypter } from '@/data/protocols'
 import { DbAddAccount } from './db-add-account'
-import { AccountModel, AddAccountModel } from './db-add-account-protocols'
 
 const makeEncrypter = (): Encrypter => {
   class EncrypterStub implements Encrypter {
@@ -15,16 +14,13 @@ const makeEncrypter = (): Encrypter => {
 
 const makeAddAccountRepository = (): AddAccountRepository => {
   class AddAccountRepositoryStub implements AddAccountRepository {
-    async add(account: AddAccountModel): Promise<AccountModel> {
-      const fakeAccount = {
-        id: 'valid_id',
-        name: 'valid_name',
-        email: 'valid_email@email.com',
-        password: 'hashed_password'
-      }
-      return await new Promise((resolve) => {
-        resolve(fakeAccount)
-      })
+    params: AddAccountRepository.Params = {} as AddAccountRepository.Params
+    result = true
+    async add(
+      account: AddAccountRepository.Params
+    ): Promise<AddAccountRepository.Result> {
+      this.params = account
+      return this.result
     }
   }
   return new AddAccountRepositoryStub()
@@ -113,11 +109,6 @@ test('Should return an account on success', async () => {
     email: 'valid_email@email.com',
     password: 'valid_password'
   }
-  const account = await sut.add(accountData)
-  expect(account).toEqual({
-    id: 'valid_id',
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'hashed_password'
-  })
+  const isValid = await sut.add(accountData)
+  expect(isValid).toBe(true)
 })
