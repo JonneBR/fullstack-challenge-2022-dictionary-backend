@@ -16,7 +16,7 @@
   ![alt architecture](/public/img/signup/architecture-infra-layer.PNG)
   > ## Success Case
 
-1. 🔲 Receives a **POST** request at **/auth/signup** route
+1. ✅ Receives a **POST** request at **/auth/signup** route
 2. ✅ Validate required data as **name**, **email**, **password** and **passwordConfirmation**
 3. ✅ Validate if **password** and **passwordConfirmation** match
 4. ✅ Validate if **email** is valid
