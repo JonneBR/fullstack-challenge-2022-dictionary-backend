@@ -2,5 +2,8 @@
   "trailingComma": "none",
   "tabWidth": 2,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "spaceBeforeFunctionParen": true
 }
