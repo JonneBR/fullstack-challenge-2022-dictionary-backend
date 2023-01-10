@@ -1,7 +1,7 @@
 import { AddAccountRepository } from '@/data/protocols'
 // import { AccountModel } from '@/domain/models'
 // import { AddAccountModel } from '@/domain/usecases'
-import { MongoHelper } from '../helpers/mongo-helper'
+import { MongoHelper } from '../mongo-helper'
 
 export class AccountMongoRepository implements AddAccountRepository {
   async add(

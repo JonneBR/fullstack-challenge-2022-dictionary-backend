@@ -1,5 +1,12 @@
+import { setupApp } from '../config/app'
+import { Express } from 'express'
 import request from 'supertest'
-import app from '../config/app'
+
+let app: Express
+
+beforeAll(async () => {
+  app = await setupApp()
+})
 
 test('Should parse body as json', async () => {
   app.post('/test-body-parser', (req, res) => {

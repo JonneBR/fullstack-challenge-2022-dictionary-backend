@@ -1,5 +1,12 @@
+import { setupApp } from '../config/app'
+import type { Express } from 'express'
 import request from 'supertest'
-import app from '../config/app'
+
+let app: Express
+
+beforeAll(async () => {
+  app = await setupApp()
+})
 
 test('Should return default content type as JSON', async () => {
   app.get('/test-content-type', (req, res) => {

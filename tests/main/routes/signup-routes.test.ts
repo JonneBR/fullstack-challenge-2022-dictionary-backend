@@ -1,8 +1,12 @@
 import request from 'supertest'
-import app from '@/main/config/app'
-import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
+import { setupApp } from '@/main/config/app'
+import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import type { Express } from 'express'
+
+let app: Express
 
 beforeAll(async () => {
+  app = await setupApp()
   await MongoHelper.connect(process.env.MONGO_URL)
 })
 

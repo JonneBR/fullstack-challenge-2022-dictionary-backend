@@ -1,4 +1,4 @@
-import { MongoHelper } from '../helpers/mongo-helper'
+import { MongoHelper } from '../mongo-helper'
 import { AccountMongoRepository } from './account'
 
 beforeAll(async () => {
