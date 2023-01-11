@@ -1,19 +1,18 @@
 import { MongoClient, Collection } from 'mongodb'
+import env from '../../../main/config/env'
 
 export const MongoHelper = {
-  client: {} as MongoClient,
+  client: new MongoClient(env.mongoUrl),
 
-  async connect(url: string | undefined): Promise<void> {
-    const env = process.env.MONGO_URL
-    if (env) {
-      this.client = await MongoClient.connect(env)
-    }
+  async connect(url: string = env.mongoUrl): Promise<void> {
+    await this.client.connect()
   },
+
   async disconnect(): Promise<void> {
     await this.client.close()
   },
 
   getCollection(name: string): Collection {
-    return this.client.db().collection(name)
+    return this.client.db('dictionary').collection(name)
   }
 }

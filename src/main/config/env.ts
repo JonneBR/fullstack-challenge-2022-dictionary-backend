@@ -1,5 +1,4 @@
 export default {
-  mongoUrl:
-    process.env.MONGO_URL ?? 'mongodb://localhost:27017/challenge-dictionary',
+  mongoUrl: process.env.MONGO_URL ?? 'mongodb://localhost:27017/dictionary',
   port: process.env.PORT ?? 5050
 }
