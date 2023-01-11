@@ -7,14 +7,16 @@
 - The following images show how the architecture has evolved
 
 - Domain and Presentation Layer
-  ![alt architecture](/public/img/signup/architecture-domain-presentation-layer.PNG)
+  ![alt architecture domain and presentation](/public/img/signup/architecture-domain-presentation-layer.PNG)
 - Utils Layer
-  ![alt architecture](/public/img/signup/architecture-utils-layer.PNG)
+  ![alt architecture utils](/public/img/signup/architecture-utils-layer.PNG)
 - Data Layer
-  ![alt architecture](/public/img/signup/architecture-data-layer.PNG)
+  ![alt architecture data](/public/img/signup/architecture-data-layer.PNG)
 - Infra Layer
-  ![alt architecture](/public/img/signup/architecture-infra-layer.PNG)
-  > ## Success Case
+  ![alt architecture infra](/public/img/signup/architecture-infra-layer.PNG)
+  - Main Layer
+    ![alt architecture main](/public/img/signup/architecture-main-layer.PNG)
+    > ## Success Case
 
 1. ✅ Receives a **POST** request at **/auth/signup** route
 2. ✅ Validate required data as **name**, **email**, **password** and **passwordConfirmation**
@@ -29,12 +31,12 @@
 
 > ## Exceptions
 
-1. 🔲 Return status **404** if API route doesn't exist
+1. ✅ Return status **404** if API route doesn't exist
 2. ✅ Return status **400** if name, email, password or passwordConfirmation won't be entered
 3. ✅ Return status **400** if password and passwordConfirmation won't be equal
 4. ✅ Return status **400** if email field is an invalid one
 5. 🔲 Return status **403** if provided email is already taken
-6. 🔲 Return status **500** if it gives an error when generating encrypted password
-7. 🔲 Return status **500** if it gives an error when creating user's account
-8. 🔲 Return status **500** if it gives an error when generating access token
+6. ✅ Return status **500** if it gives an error when generating encrypted password
+7. ✅ Return status **500** if it gives an error when creating user's account
+8. ✅ Return status **500** if it gives an error when generating access token
 9. 🔲 Return status **500** if it gives an error when updating user's information with generated token
