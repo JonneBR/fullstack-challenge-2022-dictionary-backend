@@ -42,15 +42,16 @@ const makeSut = (): SutTypes => {
   }
 }
 
+const makeFakeAccountData = (): AddAccountRepository.Params => ({
+  name: 'valid_name',
+  email: 'valid_email@email.com',
+  password: 'valid_password'
+})
+
 test('Should call Encrypter with correct password', async () => {
   const { sut, encrypterStub } = makeSut()
   const encryptSpy = jest.spyOn(encrypterStub, 'encrypt')
-  const accountData = {
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'valid_password'
-  }
-  await sut.add(accountData)
+  await sut.add(makeFakeAccountData())
   expect(encryptSpy).toHaveBeenCalledWith('valid_password')
 })
 
@@ -61,24 +62,14 @@ test('Should throw if Encrypter throws', async () => {
       reject(new Error())
     })
   )
-  const accountData = {
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'valid_password'
-  }
-  const promise = sut.add(accountData)
+  const promise = sut.add(makeFakeAccountData())
   await expect(promise).rejects.toThrow()
 })
 
 test('Should call AddAccountRepository with correct values', async () => {
   const { sut, addAccountRepositoryStub } = makeSut()
   const addSpy = jest.spyOn(addAccountRepositoryStub, 'add')
-  const accountData = {
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'valid_password'
-  }
-  await sut.add(accountData)
+  await sut.add(makeFakeAccountData())
   expect(addSpy).toHaveBeenCalledWith({
     name: 'valid_name',
     email: 'valid_email@email.com',
@@ -93,22 +84,12 @@ test('Should throw if AddAccountRepository throws', async () => {
       reject(new Error())
     })
   )
-  const accountData = {
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'valid_password'
-  }
-  const promise = sut.add(accountData)
+  const promise = sut.add(makeFakeAccountData())
   await expect(promise).rejects.toThrow()
 })
 
 test('Should return an account on success', async () => {
   const { sut } = makeSut()
-  const accountData = {
-    name: 'valid_name',
-    email: 'valid_email@email.com',
-    password: 'valid_password'
-  }
-  const isValid = await sut.add(accountData)
+  const isValid = await sut.add(makeFakeAccountData())
   expect(isValid).toBe(true)
 })
