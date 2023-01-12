@@ -14,9 +14,10 @@
   ![alt architecture data](/public/img/signup/architecture-data-layer.PNG)
 - Infra Layer
   ![alt architecture infra](/public/img/signup/architecture-infra-layer.PNG)
-  - Main Layer
-    ![alt architecture main](/public/img/signup/architecture-main-layer.PNG)
-    > ## Success Case
+- Main Layer
+  ![alt architecture main](/public/img/signup/architecture-main-layer.PNG)
+
+> ## Success Case
 
 1. ✅ Receives a **POST** request at **/auth/signup** route
 2. ✅ Validate required data as **name**, **email**, **password** and **passwordConfirmation**
