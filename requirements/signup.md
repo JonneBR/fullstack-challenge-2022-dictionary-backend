@@ -24,11 +24,11 @@
 3. ✅ Validate if **password** and **passwordConfirmation** match
 4. ✅ Validate if **email** is valid
 5. 🔲 **Validate** if already exist a user with the given email
-6. 🔲 Generates a **encrypted** password (it cannot be decrypted)
-7. 🔲 **Create** an account with the informations provided and replaces the password for an encrypted one
+6. ✅ Generates a **encrypted** password (it cannot be decrypted)
+7. ✅ **Create** an account with the informations provided and replaces the password for an encrypted one
 8. 🔲 Generate a **token** from the user's ID
 9. 🔲 **Update** the user's data with the generated token
-10. 🔲 Return status **200** with the id, name and token
+10. ✅ Return status **200** with the id, name and token
 
 > ## Exceptions
 
