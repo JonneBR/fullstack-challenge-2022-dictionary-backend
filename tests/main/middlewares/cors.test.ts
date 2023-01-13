@@ -1,4 +1,4 @@
-import { setupApp } from '../config/app'
+import { setupApp } from '@/main/config/app'
 import type { Express } from 'express'
 import request from 'supertest'
 
