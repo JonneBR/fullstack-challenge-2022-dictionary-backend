@@ -1,6 +1,6 @@
 import { Collection } from 'mongodb'
-import { MongoHelper } from '../mongo-helper'
-import { LogMongoRepository } from './log'
+import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { LogMongoRepository } from '@/infra/db/mongodb/log-repository/log'
 
 let errorCollection: Collection
 

@@ -1,5 +1,5 @@
-import { MongoHelper } from '../mongo-helper'
-import { AccountMongoRepository } from './account'
+import { MongoHelper } from '@/infra/db'
+import { AccountMongoRepository } from '@/infra/db/mongodb/account-repository/account'
 
 beforeAll(async () => {
   await MongoHelper.connect(process.env.MONGO_URL)

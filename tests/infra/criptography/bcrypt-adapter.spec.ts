@@ -1,10 +1,12 @@
-import { Encrypter } from '@/data/protocols'
 import bcrypt from 'bcrypt'
-import { BcryptAdapter } from './bcrypt-adapter'
+import { Encrypter } from '@/data/protocols'
+import { BcryptAdapter } from '@/infra/criptography/bcrypt-adapter'
 
 jest.mock('bcrypt', () => ({
-  async hash (): Promise<string> {
-    return await new Promise(resolve => { resolve('hashed_value') })
+  async hash(): Promise<string> {
+    return await new Promise((resolve) => {
+      resolve('hashed_value')
+    })
   }
 }))
 
@@ -37,7 +39,9 @@ test('Should return a hash on success', async () => {
 
 test('Should throw if Bcrypt throws', async () => {
   const { sut } = makeSut()
-  jest.spyOn(bcrypt, 'hash').mockImplementationOnce(() => { throw new Error() })
+  jest.spyOn(bcrypt, 'hash').mockImplementationOnce(() => {
+    throw new Error()
+  })
   const promise = sut.encrypt('hashed_value')
   await expect(promise).rejects.toThrow()
 })
